@@ -12,13 +12,10 @@ generator client {
 }
 
 model post {
-  id String @id @default(cuid())
-
+  id        String   @id @default(cuid())
   createdAt DateTime @default(now())
-
-  content String @db.VarChar(255)
-
-  authorId String
+  content   String   @db.VarChar(255)
+  authorId  String
 
   @@index([authorId])
 }
